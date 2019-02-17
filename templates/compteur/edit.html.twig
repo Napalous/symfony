@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+<h1> Modification Compteur</h1>
+</br> 
+
+    {{ form_start(modcomp) }}
+
+    {{ form_row(modcomp.numero, {'attr':{'placeholder':"Compteur"}}) }}
+    <button class="btn btn-success btn-lg btn-block" type="submit" >Modifier</button>
+    {{ form_end(modcomp) }}
+
+{% endblock %}

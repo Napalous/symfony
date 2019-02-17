@@ -1,0 +1,24 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+<link rel="stylesheet" href="public/css/bootstrap.min.css">
+</head>
+<body>
+{% block body %}
+<h1>Connexion</h1>
+        <form action="">
+            <div class="form-group">
+                <input type="email" placeholder="Email" required name="username" class="form-control">           
+            </div>
+            <div class="form-group">
+                <input type="password" placeholder="Mot de passe" required name="m_pass" class="form-control">           
+            </div>
+
+            <div class="form-group">
+                <button type="submit"  class="btn btn-success">Connexion</button>           
+            </div>
+        </form>
+
+{% endblock %}
+</body>
+</html>

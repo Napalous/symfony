@@ -1,0 +1,19 @@
+{% extends 'base.html.twig' %}
+
+
+{% block body %}
+<h1> Modification Facture</h1>
+</br> 
+
+    {{ form_start(modFact) }}
+
+    {{ form_row(modFact.mois, {'attr':{'placeholder':"Facture du Mois de"}}) }}
+    {{ form_row(modFact.consommation, {'attr':{'placeholder':"Consommation"}}) }}
+    {{ form_row(modFact.prix, {'attr':{'placeholder':"Prix"}}) }}
+    {{ form_row(modFact.reglement, {'attr':{'placeholder':"Reglement"}}) }}
+    {{ form_row(modFact.abonnement, {'attr':{'placeholder':"Abonnement"}}) }}
+    <button class="btn btn-success btn-lg btn-block" type="submit" >Modifier</button>
+
+    {{ form_end(modFact) }}
+
+{% endblock %}

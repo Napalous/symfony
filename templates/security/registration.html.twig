@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+{% form_theme formlogin 'bootstrap_4_layout.html.twig' %}
+
+{% block body %}
+<h1>Inscription Users</h1>
+{{ form_start(formlogin) }}
+    {{ form_row(formlogin.email, {'attr':{'placeholder':"Email"}}) }}
+    {{ form_row(formlogin.password, {'attr':{'placeholder':"Password"}}) }}
+    {{ form_row(formlogin.confirme_password, {'attr':{'placeholder':"Confirmer Password"}}) }}
+    <button class="btn btn-success btn-lg btn-block" type="submit" >Inscription</button>
+{{ form_end(formlogin) }}
+
+{% endblock %}

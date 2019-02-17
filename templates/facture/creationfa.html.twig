@@ -1,0 +1,19 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Facture</h1>
+
+    {{ form_start(formFact) }}
+
+    {{ form_row(formFact.mois, {'attr':{'placeholder':"Facture du Mois de"}}) }}
+    {{ form_row(formFact.consommation, {'attr':{'placeholder':"Consommation"}}) }}
+    {{ form_row(formFact.prix, {'attr':{'placeholder':"Prix"}}) }}
+    {{ form_row(formFact.reglement, {'attr':{'placeholder':"Reglement"}}) }}
+    {{ form_row(formFact.abonnement, {'attr':{'placeholder':"Abonnement"}}) }}
+
+    <button class="btn btn-success btn-lg btn-block" type="submit" >Ajouter</button>
+    {{ form_end(formFact) }}
+    </br></br>
+    <a href="{{ path('facture') }}" class="btn btn-danger">Lister</a>
+
+{% endblock %}

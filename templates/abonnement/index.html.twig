@@ -1,0 +1,38 @@
+{% extends 'base.html.twig' %}
+
+
+{% block body %}
+<h1>Liste des abonnements</h1></br></br>
+                        <table id="abonnement" class="table table-responsive table-striped">
+                        <thead>
+                            <tr>
+                                <th>Contrat</th>
+                                <th>Date Création</th>
+                                <th>Ancien Cumul</th>
+                                <th>Nouveau Cumul</th>
+                                <th>Numero Compteur</th>
+                                <th>Action</th>
+                                <th>Action</th>
+                                <th>Action</th>
+                            </tr>
+                            </thead>
+                             <tbody>
+                                {% for abon in selectab %}
+                                    <tr>
+                                        <td>{{abon.contrat}}</td>
+                                        <td>{{abon.dateAb|date('Y-m-d')}}</td>
+                                        <td>{{abon.cumulAnc}}</td>
+                                        <td>{{abon.cumulNouv}}</td>
+                                        <td>{{abon.compteur}}</td>
+                                        <td><a href="/abonnement/edit/{{ abon.id }}" class="btn btn-primary">Editer</a></td>
+                                        <td><a href="" class="btn btn-danger delete-abon" data-id="{{abon.id}}">Supprimer</a></td>
+                                        <td><a href="">Imprimer</a></td>
+                                </tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>    
+                        <a href="{{ path('form_abonnement') }}" class="btn btn-primary">Retour</a>            
+{% endblock %}
+{% block javascripts %}
+    <script src="/js/abonnement.js"></script>
+{% endblock %}

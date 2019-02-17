@@ -1,0 +1,15 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Compteur</h1>
+
+    {{ form_start(formCompteur) }}
+
+    {{ form_row(formCompteur.numero, {'attr':{'placeholder':"Numero Compteur"}}) }}
+
+    <button class="btn btn-success btn-lg btn-block" type="submit">Ajouter</button>
+    {{ form_end(formCompteur) }}    
+    </br>
+    <a href="{{ path('compteur') }}" class="btn btn-danger">Lister</a>
+    
+{% endblock %}

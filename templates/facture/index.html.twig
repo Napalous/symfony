@@ -1,0 +1,38 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+<h1>Listes Factures</h1>
+ <table id="facture" class="table table-responsive table-striped">
+                <thead>
+                    <tr>
+                        <th>Mois</th>
+                        <th>Consommation</th>
+                        <th>Prix</th>
+                        <th>reglement</th>
+                        <th>abonnement</th>
+                        <th>Action</th>
+                        <th>Action</th>
+                        <th>Action</th>
+                   </tr>
+                </thead>                
+                <tbody>
+                {% for fact in selectfa %}
+                    <tr>
+                        <td>{{fact.mois}}</td>
+                        <td>{{fact.consommation}}</td>
+                        <td>{{fact.prix}}</td>
+                        <td>{{fact.reglement}}</td>
+                        <td>{{fact.abonnement}}</td>
+                        <td><a href="/facture/edit/{{ fact.id }}" class="btn btn-primary">Editer</a></td>
+                        <td><a href="" class="btn btn-danger delete-fact" data-id="{{ fact.id }}">Supprimer</a></td>
+                        <td><a href="">Imprimer</a></td>
+                   </tr>
+                   {% endfor %}
+                </tbody>
+                 
+            </table>    
+            <a href="{{ path('form_facture') }}" class="btn btn-primary">Retour</a>    
+{% endblock %}
+{% block javascripts %}
+    <script src="/js/facture.js"></script>
+{% endblock %}

@@ -1,0 +1,14 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Abonnement</h1>   
+     {{ form_start(formAbon) }}
+
+    {{ form_widget(formAbon) }}
+
+    <button class="btn btn-success btn-lg btn-block" type="submit">Ajouter</button>
+    {{ form_end(formAbon) }}
+    </br></br>
+    <a href="{{ path('abonnement') }}" class="btn btn-danger">Lister</a>
+
+{% endblock %}

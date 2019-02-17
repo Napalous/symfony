@@ -1,0 +1,29 @@
+{% extends 'base.html.twig' %}
+
+
+{% block body %}
+<h1> Liste des Compteurs</h1>
+</br>     
+             <table id="compteurs" class="table table-responsive table-striped">
+                <thead>
+                    <tr>
+                        <th>Numero Compteur</th>
+                        <th>Action</th>
+                        <th>Action</th>
+                   </tr>
+                </thead>                
+                <tbody>
+                {% for cmt in selectcmpt %}
+                    <tr>
+                        <td>{{cmt.numero}}</td>
+                        <td><a href="/compteur/edit/{{ cmt.id }}" class="btn btn-warning">Editer</a></td>
+                        <td><a href="" class="btn btn-danger delete-compteur" data-id="{{cmt.id}}">Supprimer</a></td>
+                   </tr>
+                   {% endfor %}
+                </tbody>                 
+            </table> 
+            <a href="{{ path('form_creation') }}" class="btn btn-primary">Retour</a>                        
+{% endblock %}
+{% block javascripts %}
+    <script src="/js/main.js"></script>
+{% endblock %}

@@ -1,0 +1,16 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+<h1> Modification Abonnement</h1>
+</br> 
+
+    {{ form_start(modabon) }}
+
+     {{ form_row(modabon.contrat, {'attr':{'placeholder':"Contrat"}}) }}
+    {{ form_row(modabon.cumulNouv, {'attr':{'placeholder':"Nouveau Cumul"}}) }}
+    {{ form_row(modabon.compteur, {'attr':{'placeholder':"Numero Compteur"}}) }}
+
+    <button class="btn btn-success btn-lg btn-block" type="submit" >Modifier</button>
+    {{ form_end(modabon) }}
+
+{% endblock %}
